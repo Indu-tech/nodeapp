@@ -16,7 +16,7 @@ pipeline{
         stage("Run"){
             steps{
                 sh '''
-                     docker run -d -p 80:8081 --name node-app 195275650098.dkr.ecr.us-east-1.amazonaws.com/my-ecr:nodeimage
+                     docker run -d -p 80:8081 --name nodeapp 195275650098.dkr.ecr.us-east-1.amazonaws.com/my-ecr:nodeimage
                 '''
             }
         }      
