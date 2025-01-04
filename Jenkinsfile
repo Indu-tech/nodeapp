@@ -11,6 +11,14 @@ pipeline{
                      docker push 195275650098.dkr.ecr.us-east-1.amazonaws.com/my-ecr:nodeimage
                 '''
             }
-        }        
+        }  
+
+        stage("Run"){
+            steps{
+                sh '''
+                     docker run -d -p 80:8081 --name node-app 195275650098.dkr.ecr.us-east-1.amazonaws.com/my-ecr:nodeimage
+                '''
+            }
+        }      
     }
 }
